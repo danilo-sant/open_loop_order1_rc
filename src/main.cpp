@@ -6,8 +6,8 @@
 static const TickType_t samplingInterval = 50 / portTICK_PERIOD_MS; 
 static const TickType_t timeToStartInterval = 4000 / portTICK_PERIOD_MS; 
 
-static const uint8_t PV_PIN = 13;
-static const uint8_t MV_PIN = 25;
+static const uint8_t PV_PIN = 14;
+static const uint8_t MV_PIN = 26;
 volatile float VCC = 0.0;
 volatile uint16_t sensorReadingInt;
 volatile float sensorReadingVoltage;
@@ -33,8 +33,8 @@ void getSensorReadingCallback(TimerHandle_t xTimer) {
 
 // send step after <timeToStartInterval> seconds
 void setStepInputReadingCallback(TimerHandle_t xTimer) {
-  dacWrite(MV_PIN, 255);
-  VCC = 3.3;
+  dacWrite(MV_PIN, 127);
+  VCC = 2.0;
 }
 
 
