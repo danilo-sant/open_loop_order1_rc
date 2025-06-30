@@ -28,13 +28,13 @@ void getSensorReadingCallback(TimerHandle_t xTimer) {
   Serial.print(",");
   Serial.print(VCC);
   Serial.print(",");
-  Serial.println(sensorReadingVoltage, 1);
+  Serial.println(sensorReadingVoltage, 4);
 }
 
 // send step after <timeToStartInterval> seconds
 void setStepInputReadingCallback(TimerHandle_t xTimer) {
-  dacWrite(MV_PIN, 127);
-  VCC = 2.0;
+  dacWrite(MV_PIN, 77); 
+  VCC = 1.0;
 }
 
 
